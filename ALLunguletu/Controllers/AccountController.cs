@@ -60,7 +60,7 @@ namespace ALLunguletu.Controllers
         //
         // GET: /Account/Register
 
-        [AllowAnonymous]
+        [Authorize( Roles="admin")]
         public ActionResult Register()
         {
             return View();
