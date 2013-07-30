@@ -100,6 +100,7 @@ namespace ALLunguletu.Controllers
         private static IEnumerable<Lugo.EntityFramework.Complain> OrderIndex(string sidx, string sord, IEnumerable<Complain> indexList)
         {
             if (!string.IsNullOrEmpty(sidx))
+            {
                 switch (sidx.ToLower())
                 {
                     case "username":
@@ -119,6 +120,10 @@ namespace ALLunguletu.Controllers
                             indexList.OrderByDescending(x => x.Description) : indexList.OrderBy(x => x.Description);
                         break;
                 }
+            }
+            else
+                indexList = indexList.OrderByDescending(x => x.Data) ;
+
             return indexList;
         }
 
