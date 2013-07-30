@@ -1,0 +1,37 @@
+﻿@model Lugo.EntityFramework.Complain
+
+
+<h2>Stergere Sesizare</h2>
+
+<h3>Doriti sa stergeti Sesizarea?</h3>
+<fieldset>
+    <legend>Complain</legend>
+
+    <div class="display-label">
+         <b>Data:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         <b>Subiect:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Subject)
+    </div>
+
+    <div class="display-label">
+         <b>Sesizare:</b>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Sterge" /> |
+        @Html.ActionLink("Inapoi la lista", "Index")
+    </p>
+}

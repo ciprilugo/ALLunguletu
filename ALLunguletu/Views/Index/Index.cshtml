@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Lugo.EntityFramework.Index>
+
+@{
+    ViewBag.Title = "Contor Apa";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Adauga citire contor", "Create")
+</p>
+@if(Model.Count() > 0)
+{
+<table>
+    <tr>
+        <th>An citire Index&nbsp;&nbsp;</th>
+        <th>Luna citire Index&nbsp;&nbsp;</th>
+        <th>Index vechi&nbsp;&nbsp;</th>
+        <th>Index nou&nbsp;&nbsp;</th>
+        <th>Index diferenta&nbsp;&nbsp;</th>
+        <th>Tip apa&nbsp;&nbsp;</th>
+        <th>Comentarii&nbsp;&nbsp;</th>
+        <th>Data citire Index&nbsp;&nbsp;</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndexYear)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndexMonth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndexOld)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndexNew)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IndexDiff)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SysWaterType.WaterName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Data)
+        </td>
+       @* <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IndexId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IndexId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IndexId })
+        </td>*@
+    </tr>
+}
+
+</table>
+}

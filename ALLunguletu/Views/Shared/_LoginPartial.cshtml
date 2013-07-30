@@ -6,10 +6,12 @@
             <a href="javascript:document.getElementById('logoutForm').submit()">Deconectare</a>
         }
     </text>
+    
+    if(Roles.IsUserInRole("admin")){
+        @Html.ActionLink("Inregistrare utilizator", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+    }
 } else {
     <ul>
-       
-        <li>@Html.ActionLink("Inregistrare utilizator", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
         <li>@Html.ActionLink("Conectare", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
     </ul>
 }

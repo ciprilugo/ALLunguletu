@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Lugo.EntityFramework.Index>
+
+@{
+    ViewBag.Title = "Lista Index Admin ";
+}
+<h2>Lista Index Admin</h2>
+
+<div id="gridFilter" class="clearfix mt20 mb10"></div>
+<table id="grid" class="scroll"></table>
+<div id="gridPager"></div>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        jQuery("#grid").jqGrid({
+            url: '@Url.Action("GetIndex", "IndexAdmin")',
+            datatype: "json",
+            //height: "300",
+            //width: "750",
+            colNames: [
+                    'Utilizator',
+                    'An',
+                    'Luna',
+                    'Index vechi',
+                    'Index nou',
+                    'Diferenta',
+                    'Tip apa',
+                    'Data citire index',
+                    'Comentarii'
+            ],
+            colModel: [
+                    { name: 'UserName', index: 'UserName', width: 120, searchoptions: { sopt: ['cn'] } },
+                    { name: 'IndexYear', index: 'IndexYear', width: 60, searchoptions: { sopt: ['eq'] } },
+                    { name: 'IndexMonth', index: 'IndexMonth', width: 60, searchoptions: { sopt: ['eq'] } },
+                    { name: 'IndexOld', index: 'IndexOld', width: 80, search:false },
+                    { name: 'IndexNew', index: 'IndexNew', width: 80, search:false },
+                    { name: 'IndexDiff', index: 'IndexDiff', width: 80, search:false  },
+                    { name: 'WaterName', index: 'WaterName', width: 120, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Data', index: 'Data', width: 180, search:false },
+                    { name: 'Description', index: 'Description', width: 150, search:false }
+            ],
+            autoWidth: true,
+            autoHeight :true,
+            shrinkToFit: true,
+            rowNum: 10,
+            rowList: [10, 15],
+            pager: '#gridPager'
+        });
+
+        $("#grid").jqGrid('navGrid', '#gridPager', { edit: false, add: false, del: false, search: true }, {}, {}, {}, { multipleSearch: true }, {});
+    });
+
+</script>

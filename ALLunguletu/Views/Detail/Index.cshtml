@@ -1,0 +1,40 @@
+﻿@model Lugo.EntityFramework.UserInfo
+@{
+    ViewBag.Title = "Detalii utilizator";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title</h1>
+</hgroup>
+
+<section class="contact">
+    <header>
+        <h3>Nume:</h3>
+    </header>
+    <p>
+        <span class="label">@Html.DisplayFor(m=>m.FirstName) @Html.DisplayFor(m=>m.LastName)</span>
+    </p>
+    
+    <header>
+        <h3>Telefon:</h3>
+    </header>
+    <p>
+        <span class="label">@Html.DisplayFor(m=>m.Phone) </span>
+    </p>
+    
+    <header>
+        <h3>Detalii:</h3>
+    </header>
+    <p>
+        <span class="label">@Html.DisplayFor(m=>m.Description) </span>
+    </p>
+    
+    <header>
+        <h3>Email:</h3>
+    </header>
+    <p>
+        <span class="label">@Html.DisplayFor(m=>m.Email) </span>
+    </p>
+    <br /><br />
+</section>
+

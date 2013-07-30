@@ -1,6 +1,8 @@
+D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.csprojResolveAssemblyReference.cache
 D:\Projects\ALLunguletu\ALLunguletu\bin\ALLunguletu.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\ALLunguletu.pdb
 D:\Projects\ALLunguletu\ALLunguletu\bin\Antlr3.Runtime.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\DataAnnotationsExtensions.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.AspNet.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.Core.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.OAuth.Consumer.dll
@@ -8,6 +10,7 @@ D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.OAuth.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.OpenId.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\EntityFramework.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Lugo.EntityFramework.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\Microsoft.Data.Edm.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\Microsoft.Data.OData.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\Microsoft.Web.Infrastructure.dll
@@ -31,6 +34,7 @@ D:\Projects\ALLunguletu\ALLunguletu\bin\System.Web.WebPages.Razor.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\WebGrease.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\WebMatrix.Data.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\WebMatrix.WebData.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Lugo.EntityFramework.pdb
 D:\Projects\ALLunguletu\ALLunguletu\bin\EntityFramework.xml
 D:\Projects\ALLunguletu\ALLunguletu\bin\Newtonsoft.Json.xml
 D:\Projects\ALLunguletu\ALLunguletu\bin\System.Net.Http.xml
@@ -84,6 +88,5 @@ D:\Projects\ALLunguletu\ALLunguletu\bin\ko\System.Spatial.resources.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\ru\System.Spatial.resources.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\zh-Hans\System.Spatial.resources.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\zh-Hant\System.Spatial.resources.dll
-D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.csprojResolveAssemblyReference.cache
 D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.dll
 D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.pdb

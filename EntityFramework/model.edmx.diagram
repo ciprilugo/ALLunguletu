@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2fe00b61480c421180c46a61a921df21" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.webpages_Membership" Width="1.5" PointX="2.875" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.webpages_OAuthMembership" Width="1.5" PointX="8.5" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.webpages_Roles" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_Applications" Width="1.5" PointX="6.125" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_MembershipUsers" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_Profiles" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_Roles" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_Users" Width="1.5" PointX="8.125" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_UsersInRoles" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_WebPartState_Paths" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_WebPartState_Shared" Width="1.5" PointX="9.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.vw_aspnet_WebPartState_User" Width="1.5" PointX="9.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Complain" Width="1.5" PointX="6.375" PointY="3.5" />
+        <EntityTypeShape EntityType="Model.Decision" Width="1.5" PointX="3.875" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.UserInfo" Width="1.5" PointX="5" PointY="0.5" />
+        <EntityTypeShape EntityType="Model.UserProfile" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="Model.FK_Complain_UserProfile" />
+        <AssociationConnector Association="Model.FK_Decision_UserProfile" />
+        <AssociationConnector Association="Model.FK_UserInfo_UserProfile" />
+        <AssociationConnector Association="Model.FK_UserInfo_webpages_Membership" />
+        <AssociationConnector Association="Model.webpages_UsersInRoles" />
+        <EntityTypeShape EntityType="Model.Index" Width="1.5" PointX="0.5" PointY="2.375" />
+        <EntityTypeShape EntityType="Model.SysWaterType" Width="1.5" PointX="2.25" PointY="4.5" />
+        <AssociationConnector Association="Model.FK_Index_SysWaterType" />
+        <AssociationConnector Association="Model.FK_Index_UserProfile" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

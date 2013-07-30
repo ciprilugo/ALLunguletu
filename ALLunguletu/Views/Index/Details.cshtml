@@ -1,0 +1,78 @@
+﻿@model Lugo.EntityFramework.Index
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Index</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserProfile.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserProfile.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexOld)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexOld)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexNew)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexNew)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexDiff)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexDiff)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexMonth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexMonth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeStamp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeStamp)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.IndexId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

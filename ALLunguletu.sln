@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ALLunguletu", "ALLunguletu\ALLunguletu.csproj", "{A150C4C3-4C30-4E2D-8E09-4C6342C6CEBA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lugo.EntityFramework", "EntityFramework\Lugo.EntityFramework.csproj", "{3AEB0D2C-0958-4F0C-B752-79E2C6EC21E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{A150C4C3-4C30-4E2D-8E09-4C6342C6CEBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A150C4C3-4C30-4E2D-8E09-4C6342C6CEBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A150C4C3-4C30-4E2D-8E09-4C6342C6CEBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEB0D2C-0958-4F0C-B752-79E2C6EC21E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEB0D2C-0958-4F0C-B752-79E2C6EC21E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEB0D2C-0958-4F0C-B752-79E2C6EC21E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEB0D2C-0958-4F0C-B752-79E2C6EC21E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

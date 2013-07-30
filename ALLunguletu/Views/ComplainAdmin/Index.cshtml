@@ -1,0 +1,37 @@
+﻿<h2>Lista Sesizari Admin</h2>
+
+<div id="gridFilter" class="clearfix mt20 mb10"></div>
+<table id="grid" class="scroll"></table>
+<div id="gridPager"></div>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        jQuery("#grid").jqGrid({
+            url: '@Url.Action("GetComplain", "ComplainAdmin")',
+            datatype: "json",
+            height: "300",
+            width: "750",
+            colNames: [
+                    'Utilizator',
+                    'Data salvare sesizare',
+                    'Subiect',
+                    'Sesizare'
+            ],
+            colModel: [
+                    { name: 'UserName', index: 'UserName', width: 120, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Data', index: 'Data', width: 120, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Subject', index: 'Subject', width: 150, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Description', index: 'Description',width: 360, searchoptions: { sopt: ['cn'] } },
+            ],
+            //autoWidth: true,
+            autoHeight: true,
+            //shrinkToFit: true,
+            rowNum: 5,
+            rowList: [5, 10],
+            pager: '#gridPager'
+        });
+
+        $("#grid").jqGrid('navGrid', '#gridPager', { edit: false, add: false, del: false, search: true }, {}, {}, {}, { multipleSearch: true }, {});
+    });
+
+</script>

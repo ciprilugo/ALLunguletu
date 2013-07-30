@@ -1,0 +1,82 @@
+﻿@model Lugo.EntityFramework.Index
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Index</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserProfile.UserName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserProfile.UserName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Data)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Data)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexOld)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexOld)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexNew)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexNew)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexDiff)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexDiff)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexMonth)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexMonth)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IndexYear)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IndexYear)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TimeStamp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TimeStamp)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

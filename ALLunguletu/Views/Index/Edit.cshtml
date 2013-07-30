@@ -1,0 +1,102 @@
+﻿@model Lugo.EntityFramework.Index
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Index</legend>
+
+        @Html.HiddenFor(model => model.IndexId)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserId, "UserProfile")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UserId", String.Empty)
+            @Html.ValidationMessageFor(model => model.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Data)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Data)
+            @Html.ValidationMessageFor(model => model.Data)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexOld)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexOld)
+            @Html.ValidationMessageFor(model => model.IndexOld)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexNew)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexNew)
+            @Html.ValidationMessageFor(model => model.IndexNew)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexDiff)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexDiff)
+            @Html.ValidationMessageFor(model => model.IndexDiff)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexMonth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexMonth)
+            @Html.ValidationMessageFor(model => model.IndexMonth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexYear)
+            @Html.ValidationMessageFor(model => model.IndexYear)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TimeStamp)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TimeStamp)
+            @Html.ValidationMessageFor(model => model.TimeStamp)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

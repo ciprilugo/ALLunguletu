@@ -1,0 +1,48 @@
+﻿<h2>Lista Decizii Admin</h2>
+
+<div id="gridFilter" class="clearfix mt20 mb10"></div>
+<table id="grid" class="scroll"></table>
+<div id="gridPager"></div>
+
+<script language="javascript" type="text/javascript">
+    $(document).ready(function () {
+        jQuery("#grid").jqGrid({
+            url: '@Url.Action("GetDecision", "DecisionAdmin")',
+            datatype: "json",
+            mtype: 'POST',
+            height: "300",
+            width: "750",
+            colNames: [
+                    '',
+                    'Utilizator',
+                    'Data salvare decizie',
+                    'Subiect',
+                    'Decizie'
+            ],
+            colModel: [
+                    { name: 'DecisionId', index: 'DecisionId', width: 120, key: true, hidden: true, editable: false },
+                    { name: 'UserName', index: 'UserName', width: 120, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Data', index: 'Data', width: 145, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Subject', index: 'Subject', width: 150, editable: true, editrules: { required: true }, editoptions: { size: '10', maxlength:'45' }, searchoptions: { sopt: ['cn'] } },
+                    { name: 'Description', index: 'Description', width: 360, editable: true, editrules: { required: true }, edittype: "textarea", editoptions: { size: '450', maxlength: '290' }, searchoptions: { sopt: ['cn'] } },
+            ],
+            //autoWidth: true,
+            autoHeight: true,
+            //shrinkToFit: true,
+            rowNum: 5,
+            rowList: [5, 10],
+            pager: '#gridPager'
+        });
+
+        $("#grid").jqGrid('navGrid', '#gridPager',
+            { edit: false, add: true, del: true, search: true },
+            {},//edit
+            { url: '@Url.Action("Add", "DecisionAdmin")', reloadAfterSubmit: true, closeOnEscape: true,closeAfterAdd: true },//add
+            { url: '@Url.Action("Delete", "DecisionAdmin")', reloadAfterSubmit: true, closeOnEscape: true }, //delete
+            { multipleSearch: true },
+            {})
+        ;
+
+    });
+
+</script>

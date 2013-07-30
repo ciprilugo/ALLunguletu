@@ -1,0 +1,10 @@
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\Lugo.EntityFramework.dll.config
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\Lugo.EntityFramework.dll
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\Lugo.EntityFramework.pdb
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\DataAnnotationsExtensions.dll
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\EntityFramework.dll
+D:\Projects\ALLunguletu\EntityFramework\bin\Debug\EntityFramework.xml
+D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.Properties.Resources.resources
+D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.csproj.GenerateResource.Cache
+D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.dll
+D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.pdb

@@ -1,0 +1,74 @@
+﻿@model ALLunguletu.Models.IndexModel
+
+@{
+    ViewBag.Title = "Introducere citiri apa";
+}
+
+<h2>Introducere citiri apa</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Index</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexOld)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexOld)
+            @Html.ValidationMessageFor(model => model.IndexOld)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexNew)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexNew)
+            @Html.ValidationMessageFor(model => model.IndexNew)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexMonth)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexMonth)
+            @Html.ValidationMessageFor(model => model.IndexMonth)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexYear)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IndexYear)
+            @Html.ValidationMessageFor(model => model.IndexYear)
+        </div>
+
+         <div class="editor-label">
+            @Html.LabelFor(model => model.WaterId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.WaterId, new SelectList(ViewBag.WaterList, "WaterId", "WaterName"))
+            @Html.ValidationMessageFor(model => model.WaterId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Description, new { @maxLength="50" })
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+        <p>
+            <input type="submit" value="Adauga citire" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Inapoi la Lista", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
