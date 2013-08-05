@@ -4,6 +4,7 @@
     <EntitySet Name="Complain" EntityType="Model.Store.Complain" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Decision" EntityType="Model.Store.Decision" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Index" EntityType="Model.Store.Index" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SysRoomType" EntityType="Model.Store.SysRoomType" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SysWaterType" EntityType="Model.Store.SysWaterType" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserInfo" EntityType="Model.Store.UserInfo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserProfile" EntityType="Model.Store.UserProfile" store:Type="Tables" Schema="dbo" />
@@ -110,10 +111,6 @@
       <End Role="UserProfile" EntitySet="UserProfile" />
       <End Role="Decision" EntitySet="Decision" />
     </AssociationSet>
-    <AssociationSet Name="FK_Index_SysWaterType" Association="Model.Store.FK_Index_SysWaterType">
-      <End Role="SysWaterType" EntitySet="SysWaterType" />
-      <End Role="Index" EntitySet="Index" />
-    </AssociationSet>
     <AssociationSet Name="FK_Index_UserProfile" Association="Model.Store.FK_Index_UserProfile">
       <End Role="UserProfile" EntitySet="UserProfile" />
       <End Role="Index" EntitySet="Index" />
@@ -161,15 +158,30 @@
     </Key>
     <Property Name="IndexId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="UserId" Type="int" Nullable="false" />
-    <Property Name="WaterId" Type="int" />
     <Property Name="Data" Type="datetime" Nullable="false" />
-    <Property Name="IndexOld" Type="int" Nullable="false" />
-    <Property Name="IndexNew" Type="int" Nullable="false" />
-    <Property Name="IndexDiff" Type="int" />
+    <Property Name="IndexOldBaieRece" Type="int" Nullable="false" />
+    <Property Name="IndexNewBaieRece" Type="int" Nullable="false" />
+    <Property Name="IndexDiffBaieRece" Type="int" />
+    <Property Name="IndexOldBaieCalda" Type="int" Nullable="false" />
+    <Property Name="IndexNewBaieCalda" Type="int" Nullable="false" />
+    <Property Name="IndexDiffBaieCalda" Type="int" />
+    <Property Name="IndexOldBucatarieRece" Type="int" Nullable="false" />
+    <Property Name="IndexNewBucatarieRece" Type="int" Nullable="false" />
+    <Property Name="IndexDiffBucatarieRece" Type="int" />
+    <Property Name="IndexOldBucatarieCalda" Type="int" Nullable="false" />
+    <Property Name="IndexNewBucatarieCalda" Type="int" Nullable="false" />
+    <Property Name="IndexDiffBucatarieCalda" Type="int" />
     <Property Name="IndexMonth" Type="int" Nullable="false" />
     <Property Name="IndexYear" Type="int" Nullable="false" />
     <Property Name="Description" Type="varchar" MaxLength="100" />
     <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SysRoomType">
+    <Key>
+      <PropertyRef Name="RoomTypeId" />
+    </Key>
+    <Property Name="RoomTypeId" Type="int" Nullable="false" />
+    <Property Name="RoomTypeName" Type="varchar" Nullable="false" MaxLength="10" />
   </EntityType>
   <EntityType Name="SysWaterType">
     <Key>
@@ -416,18 +428,6 @@
       </Principal>
       <Dependent Role="Decision">
         <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Index_SysWaterType">
-    <End Role="SysWaterType" Type="Model.Store.SysWaterType" Multiplicity="0..1" />
-    <End Role="Index" Type="Model.Store.Index" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SysWaterType">
-        <PropertyRef Name="WaterId" />
-      </Principal>
-      <Dependent Role="Index">
-        <PropertyRef Name="WaterId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

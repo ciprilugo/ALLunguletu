@@ -44,8 +44,9 @@ namespace Lugo.EntityFramework
         public DbSet<Decision> Decision { get; set; }
         public DbSet<UserInfo> UserInfo { get; set; }
         public DbSet<UserProfile> UserProfile { get; set; }
-        public DbSet<Index> Index { get; set; }
         public DbSet<SysWaterType> SysWaterType { get; set; }
+        public DbSet<SysRoomType> SysRoomType { get; set; }
+        public DbSet<Index> Index { get; set; }
     
         public virtual int aspnet_AnyDataInTables(Nullable<int> tablesToCheck)
         {

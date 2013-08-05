@@ -15,27 +15,54 @@
             url: '@Url.Action("GetIndex", "IndexAdmin")',
             datatype: "json",
             //height: "300",
-            //width: "750",
+           //width: "1250",
             colNames: [
                     'Utilizator',
                     'An',
                     'Luna',
-                    'Index vechi',
-                    'Index nou',
-                    'Diferenta',
-                    'Tip apa',
-                    'Data citire index',
+                    'Data',
+
+                    'InVe BaRe',
+                    'InNo BaRe',
+                    'Dif. BaRe',
+
+                    'InVe BaCa',
+                    'InNo BaCa',
+                    'Dif. BaCa',
+
+                    'InVe BuRe',
+                    'InNo BuRe',
+                    'Dif. BuRe',
+
+                    'InVe BuCa',
+                    'InNo BuCa',
+                    'Dif. BuCa',
+
+                    
                     'Comentarii'
             ],
             colModel: [
-                    { name: 'UserName', index: 'UserName', width: 120, searchoptions: { sopt: ['cn'] } },
-                    { name: 'IndexYear', index: 'IndexYear', width: 60, searchoptions: { sopt: ['eq'] } },
-                    { name: 'IndexMonth', index: 'IndexMonth', width: 60, searchoptions: { sopt: ['eq'] } },
-                    { name: 'IndexOld', index: 'IndexOld', width: 80, search:false },
-                    { name: 'IndexNew', index: 'IndexNew', width: 80, search:false },
-                    { name: 'IndexDiff', index: 'IndexDiff', width: 80, search:false  },
-                    { name: 'WaterName', index: 'WaterName', width: 120, searchoptions: { sopt: ['cn'] } },
-                    { name: 'Data', index: 'Data', width: 180, search:false },
+                    { name: 'UserName', index: 'UserName', width: 80, searchoptions: { sopt: ['cn'] } },
+                    { name: 'IndexYear', index: 'IndexYear', width: 50, searchoptions: { sopt: ['eq'] } },
+                    { name: 'IndexMonth', index: 'IndexMonth', width: 50, searchoptions: { sopt: ['eq'] } },
+                    { name: 'Data', index: 'Data', width: 110, search: false },
+
+                    { name: 'IndexOldBaRe', index: 'IndexOldBaRe', width: 80, search:false },
+                    { name: 'IndexNewBaRe', index: 'IndexNewBaRe', width: 80, search:false },
+                    { name: 'IndexDiffBaRe', index: 'IndexDiffBaRe', width: 80, search: false, classes: "colorDiff" },
+
+                    { name: 'IndexOldBaCa', index: 'IndexOldBaCa', width: 80, search: false },
+                    { name: 'IndexNewBaCa', index: 'IndexNewBaCa', width: 80, search: false },
+                    { name: 'IndexDiffBaCa', index: 'IndexDiffBaCa', width: 80, search: false, classes: "colorDiff" },
+
+                    { name: 'IndexOldBuRe', index: 'IndexOldBuRe', width: 80, search: false },
+                    { name: 'IndexNewBuRe', index: 'IndexNewBuRe', width: 80, search: false },
+                    { name: 'IndexDiffBuRe', index: 'IndexDiffBuRe', width: 80, search: false, classes: "colorDiff" },
+
+                    { name: 'IndexOldBuCa', index: 'IndexOldBuCa', width: 80, search: false },
+                    { name: 'IndexNewBuCa', index: 'IndexNewBuCa', width: 80, search: false },
+                    { name: 'IndexDiffBuCa', index: 'IndexDiffBuCa', width: 80, search: false, classes: "colorDiff" },
+                    
                     { name: 'Description', index: 'Description', width: 150, search:false }
             ],
             autoWidth: true,
@@ -50,3 +77,9 @@
     });
 
 </script>
+
+<div>
+            <b>Nota:</b> <br /><b>InVe</b> - Index Vechi; <b>InNo</b> - Index Nou; <b>BaRe</b> - Baie Rece; <b>BaCa</b> - Baie Calda;
+             <b>BuRe</b> - Bucatarie Rece; <b>BuCa</b> - Bucatarie Calda
+
+        </div>

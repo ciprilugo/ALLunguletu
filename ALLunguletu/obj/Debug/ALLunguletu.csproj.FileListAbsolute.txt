@@ -90,3 +90,8 @@ D:\Projects\ALLunguletu\ALLunguletu\bin\zh-Hans\System.Spatial.resources.dll
 D:\Projects\ALLunguletu\ALLunguletu\bin\zh-Hant\System.Spatial.resources.dll
 D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.dll
 D:\Projects\ALLunguletu\ALLunguletu\obj\Debug\ALLunguletu.pdb
+D:\Projects\ALLunguletu\ALLunguletu\bin\Glimpse.Ado.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Glimpse.AspNet.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Glimpse.Core.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Glimpse.EF5.dll
+D:\Projects\ALLunguletu\ALLunguletu\bin\Glimpse.Mvc4.dll

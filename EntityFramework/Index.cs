@@ -16,17 +16,24 @@ namespace Lugo.EntityFramework
     {
         public int IndexId { get; set; }
         public int UserId { get; set; }
-        public Nullable<int> WaterId { get; set; }
         public System.DateTime Data { get; set; }
-        public int IndexOld { get; set; }
-        public int IndexNew { get; set; }
-        public Nullable<int> IndexDiff { get; set; }
+        public int IndexOldBaieRece { get; set; }
+        public int IndexNewBaieRece { get; set; }
+        public Nullable<int> IndexDiffBaieRece { get; set; }
+        public int IndexOldBaieCalda { get; set; }
+        public int IndexNewBaieCalda { get; set; }
+        public Nullable<int> IndexDiffBaieCalda { get; set; }
+        public int IndexOldBucatarieRece { get; set; }
+        public int IndexNewBucatarieRece { get; set; }
+        public Nullable<int> IndexDiffBucatarieRece { get; set; }
+        public int IndexOldBucatarieCalda { get; set; }
+        public int IndexNewBucatarieCalda { get; set; }
+        public Nullable<int> IndexDiffBucatarieCalda { get; set; }
         public int IndexMonth { get; set; }
         public int IndexYear { get; set; }
         public string Description { get; set; }
         public System.DateTime TimeStamp { get; set; }
     
-        public virtual SysWaterType SysWaterType { get; set; }
         public virtual UserProfile UserProfile { get; set; }
     }
 }

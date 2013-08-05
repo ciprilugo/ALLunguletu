@@ -10,4 +10,10 @@ namespace ALLunguletu.Enums
         Rece = 1,
         Calda = 2
     }
+
+    public enum SysRoomType
+    {
+        Baie = 1,
+        Bucatarie = 2
+    }
 }

@@ -8,3 +8,4 @@ D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.Propertie
 D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.csproj.GenerateResource.Cache
 D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.dll
 D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.pdb
+D:\Projects\ALLunguletu\EntityFramework\obj\Debug\Lugo.EntityFramework.csprojResolveAssemblyReference.cache

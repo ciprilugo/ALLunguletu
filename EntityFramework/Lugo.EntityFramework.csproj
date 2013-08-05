@@ -81,6 +81,9 @@
       <DependentUpon>model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SysRoomType.cs">
+      <DependentUpon>model.tt</DependentUpon>
+    </Compile>
     <Compile Include="SysWaterType.cs">
       <DependentUpon>model.tt</DependentUpon>
     </Compile>

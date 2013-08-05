@@ -64,12 +64,24 @@ namespace ALLunguletu.Controllers
                         x.UserProfile.UserName,
                         x.IndexYear.ToString(),
                         x.IndexMonth.ToString(),
-                        x.IndexOld.ToString(),
-                        x.IndexNew.ToString(),
-                        x.IndexDiff.ToString(),
-                        x.SysWaterType.WaterName,
                         x.Data.ToShortDateString() + ' ' + x.Data.ToShortTimeString(),
-                        x.Description.ToString()
+
+                        x.IndexOldBaieRece.ToString(),
+                        x.IndexNewBaieRece.ToString(),
+                        x.IndexDiffBaieRece.ToString(),
+
+                        x.IndexOldBaieCalda.ToString(),
+                        x.IndexNewBaieCalda.ToString(),
+                        x.IndexDiffBaieCalda.ToString(),
+  
+                        x.IndexOldBucatarieRece.ToString(),
+                        x.IndexNewBucatarieRece.ToString(),
+                        x.IndexDiffBucatarieRece.ToString(),
+  
+                        x.IndexOldBucatarieCalda.ToString(),
+                        x.IndexNewBucatarieCalda.ToString(),
+                        x.IndexDiffBucatarieCalda.ToString(),
+                        x.Description != null?x.Description.ToString():string.Empty
                     }
                 }).ToList()
 
@@ -100,10 +112,6 @@ namespace ALLunguletu.Controllers
                             if (item.op.ToLower().Equals("eq"))
                                 indexList = indexList.Where(x => x.IndexMonth == int.Parse(item.data));
                             break;
-                        case "watername":
-                            if (item.op.ToLower().Equals("cn"))
-                                indexList = indexList.Where(x => x.SysWaterType.WaterName.ToLower().Contains(item.data.ToLower()));
-                            break;
                     }
                 }
 
@@ -130,22 +138,65 @@ namespace ALLunguletu.Controllers
                         indexList = sord.Equals("desc") ?
                             indexList.OrderByDescending(x => x.IndexMonth) : indexList.OrderBy(x => x.IndexMonth);
                         break;
-                    case "indexold":
+
+                    case "indexoldbare":
                         indexList = sord.Equals("desc") ?
-                            indexList.OrderByDescending(x => x.IndexOld) : indexList.OrderBy(x => x.IndexOld);
+                            indexList.OrderByDescending(x => x.IndexOldBaieRece) : indexList.OrderBy(x => x.IndexOldBaieRece);
                         break;
-                    case "indexnew":
+                    case "indexnewbare":
                         indexList = sord.Equals("desc") ?
-                            indexList.OrderByDescending(x => x.IndexNew) : indexList.OrderBy(x => x.IndexNew);
+                            indexList.OrderByDescending(x => x.IndexNewBaieRece) : indexList.OrderBy(x => x.IndexNewBaieRece);
                         break;
-                    case "indexdiff":
+                    case "indexdiffbare":
                         indexList = sord.Equals("desc") ?
-                            indexList.OrderByDescending(x => x.IndexDiff) : indexList.OrderBy(x => x.IndexDiff);
+                            indexList.OrderByDescending(x => x.IndexDiffBaieRece) : indexList.OrderBy(x => x.IndexDiffBaieRece);
                         break;
-                    case "watername":
+
+
+
+                    case "indexoldbaca":
                         indexList = sord.Equals("desc") ?
-                            indexList.OrderByDescending(x => x.SysWaterType.WaterName) : indexList.OrderBy(x => x.SysWaterType.WaterName);
+                            indexList.OrderByDescending(x => x.IndexOldBaieCalda) : indexList.OrderBy(x => x.IndexOldBaieCalda);
                         break;
+                    case "indexnewbaca":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexNewBaieCalda) : indexList.OrderBy(x => x.IndexNewBaieCalda);
+                        break;
+                    case "indexdiffbaca":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexDiffBaieCalda) : indexList.OrderBy(x => x.IndexDiffBaieCalda);
+                        break;
+
+
+
+                    case "indexoldbure":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexOldBucatarieRece) : indexList.OrderBy(x => x.IndexOldBucatarieRece);
+                        break;
+                    case "indexnewbure":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexNewBucatarieRece) : indexList.OrderBy(x => x.IndexNewBucatarieRece);
+                        break;
+                    case "indexdiffbure":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexDiffBucatarieRece) : indexList.OrderBy(x => x.IndexDiffBucatarieRece);
+                        break;
+
+
+
+                    case "indexoldbuca":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexOldBucatarieCalda) : indexList.OrderBy(x => x.IndexOldBucatarieCalda);
+                        break;
+                    case "indexnewbuca":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexNewBucatarieCalda) : indexList.OrderBy(x => x.IndexNewBucatarieCalda);
+                        break;
+                    case "indexdiffbuca":
+                        indexList = sord.Equals("desc") ?
+                            indexList.OrderByDescending(x => x.IndexDiffBucatarieCalda) : indexList.OrderBy(x => x.IndexDiffBucatarieCalda);
+                        break;
+
                     case "data":
                         indexList = sord.Equals("desc") ?
                             indexList.OrderByDescending(x => x.Data) : indexList.OrderBy(x => x.Data);

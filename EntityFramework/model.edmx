@@ -9,6 +9,7 @@
           <EntitySet Name="Complain" EntityType="Model.Store.Complain" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Decision" EntityType="Model.Store.Decision" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Index" EntityType="Model.Store.Index" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="SysRoomType" EntityType="Model.Store.SysRoomType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="SysWaterType" EntityType="Model.Store.SysWaterType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UserInfo" EntityType="Model.Store.UserInfo" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="UserProfile" EntityType="Model.Store.UserProfile" store:Type="Tables" Schema="dbo" />
@@ -115,10 +116,6 @@
             <End Role="UserProfile" EntitySet="UserProfile" />
             <End Role="Decision" EntitySet="Decision" />
           </AssociationSet>
-          <AssociationSet Name="FK_Index_SysWaterType" Association="Model.Store.FK_Index_SysWaterType">
-            <End Role="SysWaterType" EntitySet="SysWaterType" />
-            <End Role="Index" EntitySet="Index" />
-          </AssociationSet>
           <AssociationSet Name="FK_Index_UserProfile" Association="Model.Store.FK_Index_UserProfile">
             <End Role="UserProfile" EntitySet="UserProfile" />
             <End Role="Index" EntitySet="Index" />
@@ -166,15 +163,30 @@
           </Key>
           <Property Name="IndexId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="UserId" Type="int" Nullable="false" />
-          <Property Name="WaterId" Type="int" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="IndexOld" Type="int" Nullable="false" />
-          <Property Name="IndexNew" Type="int" Nullable="false" />
-          <Property Name="IndexDiff" Type="int" />
+          <Property Name="IndexOldBaieRece" Type="int" Nullable="false" />
+          <Property Name="IndexNewBaieRece" Type="int" Nullable="false" />
+          <Property Name="IndexDiffBaieRece" Type="int" />
+          <Property Name="IndexOldBaieCalda" Type="int" Nullable="false" />
+          <Property Name="IndexNewBaieCalda" Type="int" Nullable="false" />
+          <Property Name="IndexDiffBaieCalda" Type="int" />
+          <Property Name="IndexOldBucatarieRece" Type="int" Nullable="false" />
+          <Property Name="IndexNewBucatarieRece" Type="int" Nullable="false" />
+          <Property Name="IndexDiffBucatarieRece" Type="int" />
+          <Property Name="IndexOldBucatarieCalda" Type="int" Nullable="false" />
+          <Property Name="IndexNewBucatarieCalda" Type="int" Nullable="false" />
+          <Property Name="IndexDiffBucatarieCalda" Type="int" />
           <Property Name="IndexMonth" Type="int" Nullable="false" />
           <Property Name="IndexYear" Type="int" Nullable="false" />
           <Property Name="Description" Type="varchar" MaxLength="100" />
           <Property Name="TimeStamp" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SysRoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Name="RoomTypeId" Type="int" Nullable="false" />
+          <Property Name="RoomTypeName" Type="varchar" Nullable="false" MaxLength="10" />
         </EntityType>
         <EntityType Name="SysWaterType">
           <Key>
@@ -421,18 +433,6 @@
             </Principal>
             <Dependent Role="Decision">
               <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Index_SysWaterType">
-          <End Role="SysWaterType" Type="Model.Store.SysWaterType" Multiplicity="0..1" />
-          <End Role="Index" Type="Model.Store.Index" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SysWaterType">
-              <PropertyRef Name="WaterId" />
-            </Principal>
-            <Dependent Role="Index">
-              <PropertyRef Name="WaterId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1199,17 +1199,14 @@
             <End Role="webpages_Roles" EntitySet="webpages_Roles" />
             <End Role="UserProfile" EntitySet="UserProfile" />
           </AssociationSet>
-          <EntitySet Name="Index" EntityType="Model.Index" />
           <EntitySet Name="SysWaterType" EntityType="Model.SysWaterType" />
-          <AssociationSet Name="FK_Index_SysWaterType" Association="Model.FK_Index_SysWaterType">
-            <End Role="SysWaterType" EntitySet="SysWaterType" />
-            <End Role="Index" EntitySet="Index" />
-          </AssociationSet>
+          <EntitySet Name="SysRoomType" EntityType="Model.SysRoomType" />
+          <EntitySet Name="Index" EntityType="Model.Index" />
           <AssociationSet Name="FK_Index_UserProfile" Association="Model.FK_Index_UserProfile">
             <End Role="UserProfile" EntitySet="UserProfile" />
             <End Role="Index" EntitySet="Index" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="webpages_Membership">
           <Key>
             <PropertyRef Name="UserId" />
@@ -1475,44 +1472,45 @@
           <End Type="Model.webpages_Roles" Role="webpages_Roles" Multiplicity="*" />
           <End Type="Model.UserProfile" Role="UserProfile" Multiplicity="*" />
         </Association>
-        <EntityType Name="Index">
-          <Key>
-            <PropertyRef Name="IndexId" />
-          </Key>
-          <Property Type="Int32" Name="IndexId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="UserId" Nullable="false" />
-          <Property Type="Int32" Name="WaterId" />
-          <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="IndexOld" Nullable="false" />
-          <Property Type="Int32" Name="IndexNew" Nullable="false" />
-          <Property Type="Int32" Name="IndexDiff" />
-          <Property Type="Int32" Name="IndexMonth" Nullable="false" />
-          <Property Type="Int32" Name="IndexYear" Nullable="false" />
-          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
-          <NavigationProperty Name="SysWaterType" Relationship="Model.FK_Index_SysWaterType" FromRole="Index" ToRole="SysWaterType" />
-          <NavigationProperty Name="UserProfile" Relationship="Model.FK_Index_UserProfile" FromRole="Index" ToRole="UserProfile" />
-        </EntityType>
         <EntityType Name="SysWaterType">
           <Key>
             <PropertyRef Name="WaterId" />
           </Key>
           <Property Type="Int32" Name="WaterId" Nullable="false" />
           <Property Type="String" Name="WaterName" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Index" Relationship="Model.FK_Index_SysWaterType" FromRole="SysWaterType" ToRole="Index" />
         </EntityType>
-        <Association Name="FK_Index_SysWaterType">
-          <End Type="Model.SysWaterType" Role="SysWaterType" Multiplicity="0..1" />
-          <End Type="Model.Index" Role="Index" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SysWaterType">
-              <PropertyRef Name="WaterId" />
-            </Principal>
-            <Dependent Role="Index">
-              <PropertyRef Name="WaterId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityType Name="SysRoomType">
+          <Key>
+            <PropertyRef Name="RoomTypeId" />
+          </Key>
+          <Property Type="Int32" Name="RoomTypeId" Nullable="false" />
+          <Property Type="String" Name="RoomTypeName" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Index">
+          <Key>
+            <PropertyRef Name="IndexId" />
+          </Key>
+          <Property Type="Int32" Name="IndexId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="IndexOldBaieRece" Nullable="false" />
+          <Property Type="Int32" Name="IndexNewBaieRece" Nullable="false" />
+          <Property Type="Int32" Name="IndexDiffBaieRece" />
+          <Property Type="Int32" Name="IndexOldBaieCalda" Nullable="false" />
+          <Property Type="Int32" Name="IndexNewBaieCalda" Nullable="false" />
+          <Property Type="Int32" Name="IndexDiffBaieCalda" />
+          <Property Type="Int32" Name="IndexOldBucatarieRece" Nullable="false" />
+          <Property Type="Int32" Name="IndexNewBucatarieRece" Nullable="false" />
+          <Property Type="Int32" Name="IndexDiffBucatarieRece" />
+          <Property Type="Int32" Name="IndexOldBucatarieCalda" Nullable="false" />
+          <Property Type="Int32" Name="IndexNewBucatarieCalda" Nullable="false" />
+          <Property Type="Int32" Name="IndexDiffBucatarieCalda" />
+          <Property Type="Int32" Name="IndexMonth" Nullable="false" />
+          <Property Type="Int32" Name="IndexYear" Nullable="false" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="TimeStamp" Nullable="false" Precision="3" />
+          <NavigationProperty Name="UserProfile" Relationship="Model.FK_Index_UserProfile" FromRole="Index" ToRole="UserProfile" />
+        </EntityType>
         <Association Name="FK_Index_UserProfile">
           <End Type="Model.UserProfile" Role="UserProfile" Multiplicity="1" />
           <End Type="Model.Index" Role="Index" Multiplicity="*" />
@@ -1525,7 +1523,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -1780,6 +1778,22 @@
               <ScalarProperty Name="RoleId" ColumnName="RoleId" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="SysWaterType">
+            <EntityTypeMapping TypeName="Model.SysWaterType">
+              <MappingFragment StoreEntitySet="SysWaterType">
+                <ScalarProperty Name="WaterName" ColumnName="WaterName" />
+                <ScalarProperty Name="WaterId" ColumnName="WaterId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SysRoomType">
+            <EntityTypeMapping TypeName="Model.SysRoomType">
+              <MappingFragment StoreEntitySet="SysRoomType">
+                <ScalarProperty Name="RoomTypeName" ColumnName="RoomTypeName" />
+                <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Index">
             <EntityTypeMapping TypeName="Model.Index">
               <MappingFragment StoreEntitySet="Index">
@@ -1787,21 +1801,21 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="IndexYear" ColumnName="IndexYear" />
                 <ScalarProperty Name="IndexMonth" ColumnName="IndexMonth" />
-                <ScalarProperty Name="IndexDiff" ColumnName="IndexDiff" />
-                <ScalarProperty Name="IndexNew" ColumnName="IndexNew" />
-                <ScalarProperty Name="IndexOld" ColumnName="IndexOld" />
+                <ScalarProperty Name="IndexDiffBucatarieCalda" ColumnName="IndexDiffBucatarieCalda" />
+                <ScalarProperty Name="IndexNewBucatarieCalda" ColumnName="IndexNewBucatarieCalda" />
+                <ScalarProperty Name="IndexOldBucatarieCalda" ColumnName="IndexOldBucatarieCalda" />
+                <ScalarProperty Name="IndexDiffBucatarieRece" ColumnName="IndexDiffBucatarieRece" />
+                <ScalarProperty Name="IndexNewBucatarieRece" ColumnName="IndexNewBucatarieRece" />
+                <ScalarProperty Name="IndexOldBucatarieRece" ColumnName="IndexOldBucatarieRece" />
+                <ScalarProperty Name="IndexDiffBaieCalda" ColumnName="IndexDiffBaieCalda" />
+                <ScalarProperty Name="IndexNewBaieCalda" ColumnName="IndexNewBaieCalda" />
+                <ScalarProperty Name="IndexOldBaieCalda" ColumnName="IndexOldBaieCalda" />
+                <ScalarProperty Name="IndexDiffBaieRece" ColumnName="IndexDiffBaieRece" />
+                <ScalarProperty Name="IndexNewBaieRece" ColumnName="IndexNewBaieRece" />
+                <ScalarProperty Name="IndexOldBaieRece" ColumnName="IndexOldBaieRece" />
                 <ScalarProperty Name="Data" ColumnName="Data" />
-                <ScalarProperty Name="WaterId" ColumnName="WaterId" />
                 <ScalarProperty Name="UserId" ColumnName="UserId" />
                 <ScalarProperty Name="IndexId" ColumnName="IndexId" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="SysWaterType">
-            <EntityTypeMapping TypeName="Model.SysWaterType">
-              <MappingFragment StoreEntitySet="SysWaterType">
-                <ScalarProperty Name="WaterName" ColumnName="WaterName" />
-                <ScalarProperty Name="WaterId" ColumnName="WaterId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

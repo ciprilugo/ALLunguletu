@@ -14,14 +14,7 @@ namespace Lugo.EntityFramework
     
     public partial class SysWaterType
     {
-        public SysWaterType()
-        {
-            this.Index = new HashSet<Index>();
-        }
-    
         public int WaterId { get; set; }
         public string WaterName { get; set; }
-    
-        public virtual ICollection<Index> Index { get; set; }
     }
 }

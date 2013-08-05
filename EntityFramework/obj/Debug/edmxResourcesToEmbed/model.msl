@@ -250,6 +250,22 @@
         <ScalarProperty Name="RoleId" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="SysWaterType">
+      <EntityTypeMapping TypeName="Model.SysWaterType">
+        <MappingFragment StoreEntitySet="SysWaterType">
+          <ScalarProperty Name="WaterName" ColumnName="WaterName" />
+          <ScalarProperty Name="WaterId" ColumnName="WaterId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SysRoomType">
+      <EntityTypeMapping TypeName="Model.SysRoomType">
+        <MappingFragment StoreEntitySet="SysRoomType">
+          <ScalarProperty Name="RoomTypeName" ColumnName="RoomTypeName" />
+          <ScalarProperty Name="RoomTypeId" ColumnName="RoomTypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Index">
       <EntityTypeMapping TypeName="Model.Index">
         <MappingFragment StoreEntitySet="Index">
@@ -257,21 +273,21 @@
           <ScalarProperty Name="Description" ColumnName="Description" />
           <ScalarProperty Name="IndexYear" ColumnName="IndexYear" />
           <ScalarProperty Name="IndexMonth" ColumnName="IndexMonth" />
-          <ScalarProperty Name="IndexDiff" ColumnName="IndexDiff" />
-          <ScalarProperty Name="IndexNew" ColumnName="IndexNew" />
-          <ScalarProperty Name="IndexOld" ColumnName="IndexOld" />
+          <ScalarProperty Name="IndexDiffBucatarieCalda" ColumnName="IndexDiffBucatarieCalda" />
+          <ScalarProperty Name="IndexNewBucatarieCalda" ColumnName="IndexNewBucatarieCalda" />
+          <ScalarProperty Name="IndexOldBucatarieCalda" ColumnName="IndexOldBucatarieCalda" />
+          <ScalarProperty Name="IndexDiffBucatarieRece" ColumnName="IndexDiffBucatarieRece" />
+          <ScalarProperty Name="IndexNewBucatarieRece" ColumnName="IndexNewBucatarieRece" />
+          <ScalarProperty Name="IndexOldBucatarieRece" ColumnName="IndexOldBucatarieRece" />
+          <ScalarProperty Name="IndexDiffBaieCalda" ColumnName="IndexDiffBaieCalda" />
+          <ScalarProperty Name="IndexNewBaieCalda" ColumnName="IndexNewBaieCalda" />
+          <ScalarProperty Name="IndexOldBaieCalda" ColumnName="IndexOldBaieCalda" />
+          <ScalarProperty Name="IndexDiffBaieRece" ColumnName="IndexDiffBaieRece" />
+          <ScalarProperty Name="IndexNewBaieRece" ColumnName="IndexNewBaieRece" />
+          <ScalarProperty Name="IndexOldBaieRece" ColumnName="IndexOldBaieRece" />
           <ScalarProperty Name="Data" ColumnName="Data" />
-          <ScalarProperty Name="WaterId" ColumnName="WaterId" />
           <ScalarProperty Name="UserId" ColumnName="UserId" />
           <ScalarProperty Name="IndexId" ColumnName="IndexId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="SysWaterType">
-      <EntityTypeMapping TypeName="Model.SysWaterType">
-        <MappingFragment StoreEntitySet="SysWaterType">
-          <ScalarProperty Name="WaterName" ColumnName="WaterName" />
-          <ScalarProperty Name="WaterId" ColumnName="WaterId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

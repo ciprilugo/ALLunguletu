@@ -6,13 +6,105 @@
 
 <h2>Introducere citiri apa</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
         <legend>Index</legend>
+
+
         <div class="editor-label">
+            @Html.LabelFor(model => model.IndexYear)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.IndexYear, new SelectList(ViewBag.YearList, "YearId", "YearName"))
+            @Html.ValidationMessageFor(model => model.IndexYear)
+        </div>
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IndexMonth)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.IndexMonth, new SelectList(ViewBag.MonthList, "MonthId", "MonthName"))
+            @Html.ValidationMessageFor(model => model.IndexMonth)
+        </div>
+
+        <div>
+            <table style="border:solid; border-width:medium">
+                <tr>
+                    <td></td>
+                    <td colspan="2"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rece</b></td>
+                    <td colspan="2"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calda</b></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><b>Ind. Vechi</b></td>
+                    <td><b>Ind. Nou</b></td>
+                    <td><b>Ind. Vechi</b></td>
+                    <td><b>Ind. Nou</b></td>
+                </tr>
+                <tr>
+                    <td><b>Baie</b></td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexOldBaieRece, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexOldBaieRece)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexNewBaieRece, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexNewBaieRece)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexOldBaieCalda, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexOldBaieCalda)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexNewBaieCalda, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexNewBaieCalda)
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><b>Bucatarie</b></td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexOldBucatarieRece, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexOldBucatarieRece)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexNewBucatarieRece, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexNewBucatarieRece)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexOldBucatarieCalda, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexOldBucatarieCalda)
+                        </div>
+                    </td>
+                    <td>
+                        <div class="editor-field">
+                            @Html.TextBoxFor(model => model.IndexNewBucatarieCalda, new { style = "width: 60px;", @maxlength = "6" })
+                            @Html.ValidationMessageFor(model => model.IndexNewBucatarieCalda)
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        @*        <div class="editor-label">
             @Html.LabelFor(model => model.IndexOld)
         </div>
         <div class="editor-field">
@@ -26,9 +118,9 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.IndexNew)
             @Html.ValidationMessageFor(model => model.IndexNew)
-        </div>
+        </div>*@
 
-        <div class="editor-label">
+        @* <div class="editor-label">
             @Html.LabelFor(model => model.IndexMonth)
         </div>
         <div class="editor-field">
@@ -42,23 +134,24 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.IndexYear)
             @Html.ValidationMessageFor(model => model.IndexYear)
-        </div>
+        </div>*@
 
-         <div class="editor-label">
+        @* <div class="editor-label">
             @Html.LabelFor(model => model.WaterId)
         </div>
         <div class="editor-field">
             @Html.DropDownListFor(model => model.WaterId, new SelectList(ViewBag.WaterList, "WaterId", "WaterName"))
             @Html.ValidationMessageFor(model => model.WaterId)
-        </div>
+        </div>*@
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.Description, new { @maxLength="50" })
+            @Html.TextAreaFor(model => model.Description, new { @maxLength = "50" })
             @Html.ValidationMessageFor(model => model.Description)
         </div>
+       
         <p>
             <input type="submit" value="Adauga citire" />
         </p>

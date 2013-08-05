@@ -27,23 +27,69 @@ namespace ALLunguletu.Models
         public new System.DateTime Data { get; set; }
         public new DateTime TimeStamp { get; set; }
 
-        [Display(Name="Tip apa")]
-        public int WaterId { get; set; }
+        [Display(Name = "Index vechi BaRe")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new int IndexOldBaieRece { get; set; }
 
-        [Display(Name="Index vechi")]
-        [Required(ErrorMessage = "Introduceti Indexul vechi.")]
-        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100.000 .")]
-        [DisplayFormat(DataFormatString="{0:n}")]
-        public new int IndexOld { get; set; }
+        [Display(Name = "Index nou BaRe")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new int IndexNewBaieRece { get; set; }
 
-        [Display(Name = "Index nou")]
-        [Integer(ErrorMessage = "Introduceti valori intre 1 si 100.000 .")]
-        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100.000 .")]
-        [Required(ErrorMessage = "Introduceti Indexul nou.")]
-        public new int IndexNew { get; set; }
+        [Display(Name = "Diferenta index BaRe")]
+        public new  Nullable<int> IndexDiffBaieRece { get; set; }
 
-        [Display(Name = "Diferenta index ")]
-        public new Nullable<int> IndexDiff { get; set; }
+        [Display(Name = "Index vechi BaCa")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new int IndexOldBaieCalda { get; set; }
+
+        [Display(Name = "Index nou BaCa")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new int IndexNewBaieCalda { get; set; }
+
+
+        [Display(Name = "Diferenta index BaCa")]
+        public new  Nullable<int> IndexDiffBaieCalda { get; set; }
+
+        [Display(Name = "Index vechi BuRe")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new  int IndexOldBucatarieRece { get; set; }
+
+        [Display(Name = "Index nou BuRe")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new  int IndexNewBucatarieRece { get; set; }
+
+
+        [Display(Name = "Diferenta index BuRe")]
+        public new  Nullable<int> IndexDiffBucatarieRece { get; set; }
+
+        [Display(Name = "Index vechi BuCa")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new  int IndexOldBucatarieCalda { get; set; }
+
+        [Display(Name = "Index nou BuCa")]
+        [Required(ErrorMessage = "*")]
+        [Range(1, 100000, ErrorMessage = "Introduceti valori intre 1 si 100000 .")]
+        [DisplayFormat(DataFormatString = "{0:n}")]
+        public new  int IndexNewBucatarieCalda { get; set; }
+
+
+        [Display(Name = "Diferenta index BuCa")]
+        public new  Nullable<int> IndexDiffBucatarieCalda { get; set; }
+
 
         [Display(Name = "Luna citire index")]
         [Required(ErrorMessage = "Introduceti Luna citire Index.")]
